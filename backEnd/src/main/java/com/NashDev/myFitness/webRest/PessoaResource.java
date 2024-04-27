@@ -11,6 +11,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/pessoa")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class PessoaResource {
 
     @Autowired
@@ -24,7 +25,7 @@ public class PessoaResource {
         return ResponseEntity.ok().body(response);
     }
 
-    @GetMapping(value = "/calcula_peso_ideal")
+    @PostMapping(value = "/calcula_peso_ideal")
     public ResponseEntity<Double> calculaPesoIdeal(@RequestBody PessoaDto pessoa){
         double response = pessoaService.calculaPesoIdeal(pessoa);
 

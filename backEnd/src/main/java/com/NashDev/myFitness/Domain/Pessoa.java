@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -23,7 +24,8 @@ public class Pessoa implements Serializable {
     private Long id;
     @Column(unique = true)
     private String cpf;
-    private Date datNascimento;
+    private String nome;
+    private LocalDate datNascimento;
     private Sexo sexo;
     private double altura;
     private double peso;
